@@ -9,37 +9,37 @@ export interface OpenAIModel {
 
 export enum OpenAIModelID {
   GPT_3_5 = 'gpt-3.5-turbo',
-  GPT_3_5_PREVIEW = 'gpt-3.5-turbo-0125',
   GPT_4O = 'gpt-4o',
-  GPT_4_PREVIEW = 'gpt-4-turbo-preview',
+  GPT_4O_MINI = "gpt-4o-mini",
+  GPT_4_TURBO = 'gpt-4-turbo',
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.GPT_3_5;
+export const fallbackModelID = OpenAIModelID.GPT_4O_MINI;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   [OpenAIModelID.GPT_3_5]: {
     id: OpenAIModelID.GPT_3_5,
     name: 'GPT-3.5',
-    maxLength: 12000,
-    tokenLimit: 4000,
-  },
-  [OpenAIModelID.GPT_3_5_PREVIEW]: {
-    id: OpenAIModelID.GPT_3_5_PREVIEW,
-    name: 'GPT-3.5-PREVIEW',
-    maxLength: 12000,
-    tokenLimit: 4000,
+    maxLength: 24000,
+    tokenLimit: 8000,
   },
   [OpenAIModelID.GPT_4O]: {
     id: OpenAIModelID.GPT_4O,
     name: 'GPT-4o',
-    maxLength: 24000,
-    tokenLimit: 8000,
-  },
-  [OpenAIModelID.GPT_4_PREVIEW]: {
-    id: OpenAIModelID.GPT_4_PREVIEW,
-    name: 'GPT-4-TURBO',
     maxLength: 96000,
     tokenLimit: 32000,
+  },
+  [OpenAIModelID.GPT_4O_MINI]: {
+    id: OpenAIModelID.GPT_4O_MINI,
+    name: 'GPT-4o-mini',
+    maxLength: 96000,
+    tokenLimit: 32000,
+  },
+  [OpenAIModelID.GPT_4_TURBO]: {
+    id: OpenAIModelID.GPT_4_TURBO,
+    name: 'GPT-4-TURBO',
+    maxLength: 12000,
+    tokenLimit: 4000,
   },
 };

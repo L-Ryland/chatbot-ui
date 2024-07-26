@@ -30,7 +30,7 @@ export interface HomeInitialState {
   serverSidePluginKeysSet: boolean;
 }
 
-const models = Object.values(OpenAIModels)
+const models = Object.values(OpenAIModels);
 export const initialState: HomeInitialState = {
   apiKey: '',
   loading: false,
