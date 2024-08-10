@@ -44,3 +44,12 @@ sw.js
 sw.js.map
 workbox-*.js
 workbox-*.js.map
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
